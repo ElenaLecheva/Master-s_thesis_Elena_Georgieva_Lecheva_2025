@@ -49,11 +49,12 @@ As a first step, all 2000, 150 and 600 super-pixel images in the training, valid
 To pre-process the image data, I first create an ImageDataGenerator for both the training and validation set. A pre-processing method called scaling in applied to both sets. Since images are represented by pixels with colour values between 0 and 255. When passing images as input to a CNN, these values should be normalized, i.e. rescaled by diving them by 255, to values in the same range, i.e. between 0 and 1, because having input data in different ranges will cause problems for the network (Goodfellow et al. 2016).
 Data augmentation is applied only to the training data because its primary purpose is to artificially increase the size and diversity of the training dataset, which helps the model generalize better to unseen data. The validation set is used to evaluate the model’s performance during training. It should reflect the real-world data distribution so that you can accurately measure how well the model will perform on unseen data. Thus, augmentation is active only during training but not during inference.
 The fill_mode determines how to fill in pixels that get introduced due to transformations (like rotation, zoom or shift). The options include “constant” (pad with a constant value), “wrap” (copy the top part and put it on the bottom and vice versa, copy the right side and put it on the left and vice versa), “reflect” (fill with a reflection of the image's border), 'nearest' (replicate the border) (Figure 5).
-    ![image](https://github.com/user-attachments/assets/737b4047-ccb3-4863-b3a5-ad9bdca4978f)
-    ![image](https://github.com/user-attachments/assets/db868fd6-6eb6-4230-a02b-bbe46d7d628d)
-    ![image](https://github.com/user-attachments/assets/316c1d47-e552-4a7e-bfbe-ddf8f06a8e44)
-    ![image](https://github.com/user-attachments/assets/ab83cce0-b0f2-4f75-b3ab-86948606a64f)
-    Figure 5: constant, wrap, reflect, nearest (from left to right)
+
+![image](https://github.com/user-attachments/assets/737b4047-ccb3-4863-b3a5-ad9bdca4978f)
+![image](https://github.com/user-attachments/assets/db868fd6-6eb6-4230-a02b-bbe46d7d628d)
+![image](https://github.com/user-attachments/assets/316c1d47-e552-4a7e-bfbe-ddf8f06a8e44)
+![image](https://github.com/user-attachments/assets/ab83cce0-b0f2-4f75-b3ab-86948606a64f)
+Figure 5: constant, wrap, reflect, nearest (from left to right)
 
 Then I create the actual image datasets using the flow_from_dataframe method of ImageDataGenerator, specifying the dataframes with the directory paths where the images can be found, the image data as the input, the labels and metadata as the output, the target size of the images, and batch size. Since all images, both within and between the 3 datasets, are of varying size (width and height), they were resized to a common size of 224x224.
 The own_train_generator_func and own_validation_generator_func are Python generator functions yielding a tuple of inputs (images and metadata) and targets (the labels).

@@ -1,8 +1,8 @@
 # Master's thesis 2025
 
-## Malignant Melanoma Diagnosis with Classification Convolutional Neural Networks
+**Malignant Melanoma Diagnosis with Classification Convolutional Neural Networks**
 
-## Elena Georgieva Lecheva
+**Elena Georgieva Lecheva** 
 
 Student Number: 202007457
 

@@ -153,6 +153,10 @@ The pre-processing of the data, the model architecture, the custom generator fun
 https://www.kaggle.com/code/nhm1440/image-metadata-with-keras-imagedatagenerator
 <br>
 
+The class weights are calculated by using a method found in a tutorial about classification on imbalanced data by TensorFlow:<br>
+https://www.tensorflow.org/tutorials/structured_data/imbalanced_data#class_weights
+<br>
+
 The training and validation loss and accuracy plots as well as the custom-defined function "print_best_val_metrics" have been borrowed from exercise ML4BI_E5_solution from the course Machine Learning for Business Intelligence 2:<br>
 https://colab.research.google.com/drive/1pjX4cPtXvnbjSeasNf0Z4Sl-Ii-jPM0L?usp=sharing
 <br>

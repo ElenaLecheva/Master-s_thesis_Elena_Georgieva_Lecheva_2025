@@ -134,6 +134,10 @@ To train the model with class weights and potentially alleviate the effect of cl
 <p></p>
 <br>
 
+Following the universal workflow of Machine Learning devised by Chollet (2021), when a model configuration with satisfactory performance has been developed, the model can be trained on all the available data (training and validation) and evaluated one final time on the test dataset. Therefore, before being assessed on the test data, the best perfroming ResNet50 model (Model 3) and ResNet101 model (Model 6) were trained on all the training and validation data for 30 epochs each.
+<p></p>
+<br>
+
 ### Test image data
 For the test images, again an ImageDataGenerator without data augmentation is created. <br>
 Then the image generator is specified by using the flow_from_dataframe method from ImageDataGenerator, specifying the dataframe with the directory paths where the test images can be found, the image data as the input, the labels and metadata as the output, the target size of the images and batch size, the last two being the same as the ones for the training and validation data (224x224 width x height, and 50 images per batch). (For pre-processing of the test metadata, refer back to section Metadata pre-processing).<br>
